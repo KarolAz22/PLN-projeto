@@ -1,0 +1,27 @@
+======================================================================
+🔬 RESULTADOS DA COMPARAÇÃO: BioBERTpt vs Sentence-BERT
+======================================================================
+
+Tempo de carregamento BioBERTpt: 7.03s
+Tempo de carregamento Sentence-BERT: 1.27s
+
+TESTE COM PALAVRAS INDIVIDUAIS
+Par                                 BioBERTpt       Sentence-BERT   Diferença 
+---------------------------------------------------------------------------
+menopausa ↔ fogacho              0.6374       0.1342       +0.5032
+menopausa ↔ estrogênio           0.5546       0.1866       +0.3680
+menopausa ↔ computador           0.5677       0.2119       +0.3558
+
+TESTE COM FRASES COMPLETAS
+Comparação                          BioBERTpt       Sentence-BERT   Diferença 
+---------------------------------------------------------------------------
+menopausa ↔ fogacho                 0.6303       0.7155       -0.0852
+menopausa ↔ gato                    0.5787       0.7257       -0.1470
+
+MÉTRICA DE DISCRIMINAÇÃO
+BioBERTpt:      0.0516
+Sentence-BERT:  -0.0103
+
+RESULTADO FINAL
+BioBERTpt é MELHOR!
+Discriminação 0.0516 > -0.0103

@@ -1,0 +1,36 @@
+======================================================================
+🔬 RESULTADOS DA COMPARAÇÃO: test_tokenizer vs test_tokenizer_2
+Modelos: BioBERTpt vs Paraphrase-MiniLM
+======================================================================
+
+Tempo de carregamento BioBERTpt: 87.84s
+Tempo de carregamento Paraphrase-MiniLM: 4.49s
+
+RESUMO VOCABULÁRIO:
+
+🔍 'fogacho':
+   pucpr/biobertpt-all: OK (100.0% cobertura)
+   sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2: OK (114.3% cobertura)
+
+🔍 'síndrome geniturinária da menopausa':
+   pucpr/biobertpt-all: OK (100.0% cobertura)
+   sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2: OK (112.5% cobertura)
+
+🔍 'estrogênio':
+   pucpr/biobertpt-all: OK (100.0% cobertura)
+   sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2: OK (110.0% cobertura)
+
+🔍 'perimenopausa':
+   pucpr/biobertpt-all: OK (100.0% cobertura)
+   sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2: OK (107.7% cobertura)
+
+🔍 'menopausa':
+   pucpr/biobertpt-all: OK (100.0% cobertura)
+   sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2: OK (111.1% cobertura)
+
+🔍 'labilidade emocional':
+   pucpr/biobertpt-all: OK (100.0% cobertura)
+   sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2: OK (110.5% cobertura)
+
+
+EMBEDDINGS: Ver logs acima para detalhes.

@@ -1,5 +1,5 @@
 """
-Encoder sentence-bert-base com Mean Pooling (melhor para similaridade)
+Encoder BioBERTpt com Mean Pooling (melhor para similaridade)
 """
 
 import torch
@@ -12,12 +12,12 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-class SentenceBertBaseEncoderV2:
+class BioBERTptEncoderV2:
     """Encoder com Mean Pooling para melhores embeddings"""
     
     def __init__(
         self,
-        model_name: str = "efederici/sentence-bert-base",
+        model_name: str = "pucpr/biobertpt-all",
         device: Optional[str] = None,
         max_length: int = 512,
         pooling: str = "mean"  # 'mean', 'cls', 'max'

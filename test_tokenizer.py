@@ -126,7 +126,7 @@ if __name__ == "__main__":
         print("\n📦 Carregando modelos (pode demorar)...\n")
         
         # Teste 1: Vocabulário
-        modelo_teste = "efederici/sentence-bert-base"
+        modelo_teste = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
         termos_menopausa = [
             "estrogênio", 
             "perimenopausa", 
@@ -138,7 +138,7 @@ if __name__ == "__main__":
         
         # Teste 2: Embeddings (usando sentence-transformers)
         print("\n" + "=" * 60)
-        modelo_embeddings = "distiluse-base-multilingual-cased-v2"
+        modelo_embeddings = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
         model, embeddings = testar_embeddings(modelo_embeddings)
     
     print("\n" + "=" * 60)

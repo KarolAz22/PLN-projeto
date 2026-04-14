@@ -124,8 +124,8 @@ def analisar_par(model, tokenizer, texto1, texto2):
 
 
 def testar_tecnico_vs_popular():
-    modelo_embeddings = "distiluse-base-multilingual-cased-v2"
-    modelo_tokenizer = "efederici/sentence-bert-base"
+    modelo_embeddings = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
+    modelo_tokenizer = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
 
     print("\n📦 Carregando modelos...\n")
     model = SentenceTransformer(modelo_embeddings)
@@ -154,7 +154,7 @@ if __name__ == "__main__":
     print("=" * 60)
 
     # 1. Vocabulário
-    modelo_vocab = "efederici/sentence-bert-base"
+    modelo_vocab = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
     termos = [
         "estrogênio",
         "perimenopausa",
@@ -165,7 +165,7 @@ if __name__ == "__main__":
     verificar_vocabulario(modelo_vocab, termos)
 
     # 2. Embeddings
-    modelo_emb = "distiluse-base-multilingual-cased-v2"
+    modelo_emb = "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2"
     model = testar_embeddings(modelo_emb)
 
     # 3. Técnico vs popular

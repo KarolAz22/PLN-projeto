@@ -1,0 +1,27 @@
+======================================================================
+🔬 RESULTADOS DA COMPARAÇÃO: BioBERTpt vs Paraphrase-MiniLM
+======================================================================
+
+Tempo de carregamento BioBERTpt: 84.93s
+Tempo de carregamento Sentence-BERT: 4.54s
+
+TESTE COM PALAVRAS INDIVIDUAIS
+Par                                 BioBERTpt       Paraphrase-MiniLM Diferença 
+---------------------------------------------------------------------------
+menopausa ↔ fogacho              0.6374       0.0775       +0.5599
+menopausa ↔ estrogênio           0.5546       0.4645       +0.0900
+menopausa ↔ computador           0.5677       0.0344       +0.5333
+
+TESTE COM FRASES COMPLETAS
+Comparação                          BioBERTpt       Paraphrase-MiniLM Diferença 
+---------------------------------------------------------------------------
+menopausa ↔ fogacho                 0.6303       0.0888       +0.5415
+menopausa ↔ gato                    0.5787       0.0538       +0.5250
+
+MÉTRICA DE DISCRIMINAÇÃO
+BioBERTpt:      0.0516
+Paraphrase-MiniLM:  0.0351
+
+RESULTADO FINAL
+BioBERTpt é MELHOR!
+Discriminação 0.0516 > 0.0351
