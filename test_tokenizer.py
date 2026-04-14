@@ -117,7 +117,7 @@ if __name__ == "__main__":
     if modo_rapido:
         # MODO RÁPIDO: Apenas verificar tokens (sem baixar embeddings)
         print("\n📦 Carregando apenas tokenizer (mais rápido)...\n")
-        modelo_teste = "pucpr/biobertpt-all"
+        modelo_teste = "efederici/sentence-bert-base"
         termos = ["menopausa", "estrogênio", "fogacho"]
         resultados = verificar_vocabulario(modelo_teste, termos)
         
@@ -126,7 +126,7 @@ if __name__ == "__main__":
         print("\n📦 Carregando modelos (pode demorar)...\n")
         
         # Teste 1: Vocabulário
-        modelo_teste = "pucpr/biobertpt-all"
+        modelo_teste = "efederici/sentence-bert-base"
         termos_menopausa = [
             "estrogênio", 
             "perimenopausa", 

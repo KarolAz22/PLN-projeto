@@ -125,7 +125,7 @@ def analisar_par(model, tokenizer, texto1, texto2):
 
 def testar_tecnico_vs_popular():
     modelo_embeddings = "distiluse-base-multilingual-cased-v2"
-    modelo_tokenizer = "pucpr/biobertpt-all"
+    modelo_tokenizer = "efederici/sentence-bert-base"
 
     print("\n📦 Carregando modelos...\n")
     model = SentenceTransformer(modelo_embeddings)
@@ -154,7 +154,7 @@ if __name__ == "__main__":
     print("=" * 60)
 
     # 1. Vocabulário
-    modelo_vocab = "pucpr/biobertpt-all"
+    modelo_vocab = "efederici/sentence-bert-base"
     termos = [
         "estrogênio",
         "perimenopausa",
