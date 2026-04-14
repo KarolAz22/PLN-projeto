@@ -1,5 +1,5 @@
 """
-Encoder para BioBERTpt CLS pooling - APENAS para USAR o modelo (não treina)
+Encoder para sentence-bert-base CLS pooling - APENAS para USAR o modelo (não treina)
 """
 
 import torch
@@ -12,12 +12,12 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 
-class BioBERTptEncoder:
-    """Encoder para gerar embeddings usando BioBERTpt"""
+class SentenceBertBaseEncoder:
+    """Encoder para gerar embeddings usando sentence-bert-base"""
     
     def __init__(
         self,
-        model_name: str = "pucpr/biobertpt-all",
+        model_name: str = "efederici/sentence-bert-base",
         device: Optional[str] = None,
         max_length: int = 512
     ):
@@ -104,7 +104,7 @@ if __name__ == "__main__":
     print("TESTE RÁPIDO DO ENCODER")
     print("=" * 50)
     
-    encoder = BioBERTptEncoder()
+    encoder = sentence-bert-baseEncoder()
     
     # Teste 1: texto único
     emb = encoder.encode("menopausa")

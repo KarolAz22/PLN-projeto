@@ -1,16 +1,16 @@
 import sys
 import time
 import numpy as np
-from biobertpt_encoder import BioBERTptEncoder
+from sentence_bert_base_encoder import SentenceBertBaseEncoder
 
 print("=" * 70)
-print("🚀 TESTE COMPLETO DO ENCODER BioBERTpt")
+print("🚀 TESTE COMPLETO DO ENCODER sentence-bert-base")
 print("=" * 70)
 
 # 1. Inicializa o encoder
 print("\n1️⃣ Inicializando encoder...")
 start_time = time.time()
-encoder = BioBERTptEncoder()
+encoder = sentence-bert-baseEncoder()
 init_time = time.time() - start_time
 print(f"   ✅ Inicializado em {init_time:.2f} segundos")
 print(f"   📱 Dispositivo: {encoder.device}")

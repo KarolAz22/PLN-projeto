@@ -4,8 +4,8 @@ Teste comparativo entre CLS Pooling (original) e Mean Pooling (V2)
 
 import time
 import numpy as np
-from biobertpt_encoder import BioBERTptEncoder
-from biobertpt_encoder_v2 import BioBERTptEncoderV2
+from sentence_bert_base_encoder import SentenceBertBaseEncoder
+from sentence_bert_base_encoder_v2 import SentenceBertBaseEncoderV2
 
 print("=" * 80)
 print("🔬 TESTE COMPARATIVO: CLS Pooling vs MEAN Pooling")
@@ -17,13 +17,13 @@ print("-" * 40)
 
 print("\n📌 Carregando CLS Pooling (original)...")
 start = time.time()
-encoder_cls = BioBERTptEncoder()
+encoder_cls = SentenceBertBaseEncoder()
 tempo_cls = time.time() - start
 print(f"   ✅ Carregado em {tempo_cls:.2f}s")
 
 print("\n📌 Carregando MEAN Pooling (V2)...")
 start = time.time()
-encoder_mean = BioBERTptEncoderV2(pooling="mean")
+encoder_mean = SentenceBertBaseEncoderV2(pooling="mean")
 tempo_mean = time.time() - start
 print(f"   ✅ Carregado em {tempo_mean:.2f}s")
 
@@ -168,13 +168,13 @@ print(f"   • Discriminação: {'Mean Pooling' if discriminacao_mean > discrimi
 print(f"   • Velocidade: {'Mean Pooling' if tempo_medio_mean < tempo_medio_cls else 'CLS Pooling'}")
 
 if discriminacao_mean > discriminacao_cls and tempo_medio_mean < tempo_medio_cls:
-    print("\n🎯 RECOMENDAÇÃO: Use BioBERTptEncoderV2 (Mean Pooling)")
+    print("\n🎯 RECOMENDAÇÃO: Use sentence-bert-baseEncoderV2 (Mean Pooling)")
     print("   → Melhor discriminação semântica E mais rápido!")
 elif discriminacao_mean > discriminacao_cls:
-    print("\n🎯 RECOMENDAÇÃO: Use BioBERTptEncoderV2 (Mean Pooling)")
+    print("\n🎯 RECOMENDAÇÃO: Use sentence-bert-baseEncoderV2 (Mean Pooling)")
     print("   → Melhor discriminação semântica (velocidade similar)")
 else:
-    print("\n🎯 RECOMENDAÇÃO: Use BioBERTptEncoder original (CLS Pooling)")
+    print("\n🎯 RECOMENDAÇÃO: Use sentence-bert-baseEncoder original (CLS Pooling)")
     print("   → Melhor para seu caso de uso")
 
 print("\n" + "=" * 80)

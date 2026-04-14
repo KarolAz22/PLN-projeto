@@ -1,7 +1,7 @@
-from .biobertpt_encoder import BioBERTptEncoder, EncoderComCache, similaridade_cosseno
+from .sentence-bert-base_encoder import sentence-bert-baseEncoder, EncoderComCache, similaridade_cosseno
 
 __all__ = [
-    'BioBERTptEncoder',
+    'sentence-bert-baseEncoder',
     'EncoderComCache', 
     'similaridade_cosseno',
 ]
