@@ -38,7 +38,7 @@ class NotasRelevancia(BaseModel):
 
 llm = ChatGroq(
     temperature=0, 
-    model_name=  "llama-3.3-70b-versatile", #"llama-3.1-8b-instant", 
+    model_name=  "llama-3.1-8b-instant", 
     api_key=os.getenv("GROQ_API_KEY"),
     max_retries=3, 
     timeout=None,
