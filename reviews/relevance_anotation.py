@@ -13,7 +13,8 @@ load_dotenv()
 # ==========================================
 # 1. CONFIGURAÇÃO DE ESTADO (CHECKPOINTING)
 # ==========================================
-STATE_FILE = "state_acenario_a.json"
+#STATE_FILE = "state_acenario_a.json"
+STATE_FILE = "state_acenario_b.json"
 
 def carregar_estado():
     if os.path.exists(STATE_FILE):
@@ -37,7 +38,7 @@ class NotasRelevancia(BaseModel):
 
 llm = ChatGroq(
     temperature=0, 
-    model_name="llama-3.1-8b-instant", 
+    model_name=  "llama-3.3-70b-versatile", #"llama-3.1-8b-instant", 
     api_key=os.getenv("GROQ_API_KEY"),
     max_retries=3, 
     timeout=None,
@@ -46,12 +47,20 @@ llm = ChatGroq(
 llm_estruturado = llm.with_structured_output(NotasRelevancia)
 
 prompt = ChatPromptTemplate.from_messages([
-    ("system", """Você é um juiz avaliador especialista na área médica.
-Sua tarefa é avaliar se os documentos recuperados respondem à pergunta do usuário.
+    ("system", """Você é um juiz avaliador especialista na área médica (saúde da mulher na menopausa).
+Sua tarefa é avaliar se os documentos recuperados são relevantes para responder à pergunta do usuário.
+Regras:
+
+- Baseie-se apenas na pergunta.
+- Pergunte: o documento responde diretamente ao que foi perguntado?
+- Se não responder diretamente, não pode receber nota 3.
+- Texto apenas relacionado ao tema, mas sem responder → nota 1 ou 0.
+- Similaridade de assunto não implica relevância.
+- Conteúdo genérico ou tangencial deve ser penalizado.
 Use a seguinte escala rigorosa de 0 a 3:
-3: Altamente relevante (Responde à pergunta)
-2: Parcialmente relevante (Contém informações úteis, mas incompletas)
-1: Marginalmente relevante (Tem a ver com o tema, mas não responde diretamente)
+3: Altamente relevante (Responde diretamente à pergunta)
+2: Parcialmente relevante (Parcialmente útil, incompleto ou indireto)
+1: Marginalmente relevante (Relacionado ao tema, mas não responde)
 0: Irrelevante (Não responde à pergunta)"""),
     ("human", """
 Pergunta do usuário: {question}
@@ -149,6 +158,9 @@ def avaliar_dataset(arquivo_entrada, arquivo_saida):
 
 # --- COMO EXECUTAR ---
 if __name__ == "__main__":
-    arquivo_entrada = "result_scenario_a_baseline_lexica.csv" 
-    arquivo_saida = "relevance_anotation_scenario_a_baseline_lexica.csv"
+    #arquivo_entrada = "result_scenario_a_baseline_lexica.csv" 
+    #arquivo_saida = "relevance_anotation_scenario_a_baseline_lexica.csv"
+    
+    arquivo_entrada = "result_scenario_b_baseline_dense.csv" 
+    arquivo_saida = "relevance_anotation_scenario_b_baseline_dense.csv"
     avaliar_dataset(arquivo_entrada, arquivo_saida)
